@@ -1,7 +1,7 @@
 vcl 4.1;
 
 import vtc;
-import otel from "/home/guillaume/work/libvmod-otel/src/.libs/libvmod_otel.so";
+import otel;
 
 backend be none;
 
