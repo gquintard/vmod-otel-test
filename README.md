@@ -1,9 +1,11 @@
 ``` shell
 # clone, get in
-git clone git@github.com:gquintard/vmod-otel-test.git --recurse-submodules
+git clone git@github.com:gquintard/vmod-otel-test.git
 cd vmod-otel-test
 
 # build opentelemetry
+git submodule init
+git submodule update
 cd opentelemetry-cpp/
 cmake -B build  -DWITH_ABSEIL=ON -DBUILD_SHARED_LIBS=ON -DWITH_OTLP_HTTP=ON
 cmake --build build/ -- -j32
