@@ -1,14 +1,15 @@
 AC_PREREQ([2.68])
-AC_INIT([libvmod-example], [0.1], [], [vmod-example])
+AC_INIT([libvmod-otel], [0.1], [], [vmod-otel])
 AC_COPYRIGHT([Public Domain])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_SRCDIR(src/vmod_example.vcc)
+AC_CONFIG_SRCDIR(src/vmod_otel.vcc)
 AC_CONFIG_HEADER([config.h])
 
 AM_INIT_AUTOMAKE([1.12 -Wall -Werror foreign parallel-tests])
 AM_SILENT_RULES([yes])
 AM_PROG_AR
+AC_PROG_CXX
 
 LT_PREREQ([2.2.6])
 LT_INIT([dlopen disable-static])
@@ -30,7 +31,7 @@ AC_ARG_WITH([rst2man],
 m4_ifndef([VARNISH_PREREQ], AC_MSG_ERROR([Need varnish.m4 -- see README.rst]))
 
 VARNISH_PREREQ([6.2])
-VARNISH_VMODS([example])
+VARNISH_VMODS([otel])
 
 VMOD_TESTS="$(cd $srcdir/src && echo tests/*.vtc)"
 AC_SUBST(VMOD_TESTS)

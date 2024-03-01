@@ -4,18 +4,18 @@
 # (vmodtool requires this format.)
 #
 
-$Module example 3 Example VMOD
+$Module otel 3 Otel VMOD
 
 DESCRIPTION
 ===========
 
-This is the embedded documentation for the example VMOD. It should
+This is the embedded documentation for the otel VMOD. It should
 mention what the vmod is intended to do.
 
 It can span multiple lines and is written in RST format.
 You can even have links and lists in here:
 
-* https://github.com/varnish/libvmod-example/
+* https://github.com/varnish/libvmod-otel/
 * https://www.varnish-cache.org/
 
 $Event event_function
@@ -28,3 +28,11 @@ $Function STRING hello(STRING)
 
 The different functions provided by the VMOD should also have their own
 embedded documentation. This section is for the hello() function.
+
+
+
+$Object tracer()
+
+$Method STRING .trace(PRIV_TASK, STRING)
+$Method VOID .set_attribute(PRIV_TASK, STRING, STRING)
+$Method VOID .update_name(PRIV_TASK, STRING)
